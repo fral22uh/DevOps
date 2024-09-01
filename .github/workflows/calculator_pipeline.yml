@@ -28,7 +28,7 @@ jobs:
       - name: Login to Azure Container Registry
         uses: azure/docker-login@v2
         with:
-            login-server: judevops.azurecr.io
+            registry: judevops.azurecr.io
             username: ${{ secrets.DEVOPS_USERNAME }}
             password: ${{ secrets.DEVOPS_PASSWORD }}
       
