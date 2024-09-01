@@ -36,7 +36,7 @@ jobs:
       # Create Docker image      
       - name: Build Docker image
         run: |
-          docker build -t judevops.azurecr.io/albin_fridh-calculator .
+          docker build -t judevops.azurecr.io/albin_fridh-calculator ./BE
       # Push Docker image    
       - name: Push Docker image
         run: |
