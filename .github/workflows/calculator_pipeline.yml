@@ -25,19 +25,20 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      # Login to Azure Container Registry
       - name: Login to Azure Container Registry
-        uses: azure/docker-login@v1
+        uses: docker/login-action@v2
         with:
-            login-server: judevops.azurecr.io
-            username: ${{ secrets.DEVOPS_USERNAME }}
-            password: ${{ secrets.DEVOPS_PASSWORD }}
-      
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+          registry: judevops.azurecr.io
+          username: ${{ secrets.DEVOPS_USERNAME }}
+          password: ${{ secrets.DEVOPS_PASSWORD }}
+          
+      # Create Docker image      
+      - name: Build Docker image
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          docker build -t judevops.azurecr.io/albin_fridh-calculator:latest .
+      # Push Docker image    
+      - name: Push Docker image
+        run: |
+          docker push judevops.azurecr.io/albin_fridh-calculator:latest
+          
