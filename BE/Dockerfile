@@ -1,4 +1,4 @@
 FROM python:3.12-slim
-COPY ..
+COPY . .
 RUN pip install -r requirements.txt
 ENTRYPOINT [ "python", "calculator.py" ]
