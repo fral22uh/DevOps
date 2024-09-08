@@ -56,7 +56,7 @@ jobs:
         run: |
           pytest --junit-xml=report.xml
       - name: Publish test report
-        uses: mikepenz/action-junit-report@v4
+        uses: actions/upload-artifact@v3
         if: success() || failure() # always run even if the previous step fails
         with:
           report_paths: './tests/report.xml'
