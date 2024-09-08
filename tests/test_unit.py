@@ -1,4 +1,4 @@
-from .BE.calculator_helper import CalculatorHelper
+from BE.calculator_helper import CalculatorHelper
 import pytest
 
 class BaseSetupTeardown():
