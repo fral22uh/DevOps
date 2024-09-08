@@ -37,6 +37,10 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t judevops.azurecr.io/albin_fridh-calculator ./BE
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install -r ./BE/requirements.txt
 
       # Start Calculator REST API (localhost service)
       - name: Start Calculator REST API
