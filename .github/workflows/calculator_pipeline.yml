@@ -52,12 +52,10 @@ jobs:
           echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
 
       # Run tests
-      - name: Run tests
+      - name: Build and run tests
         run: |
           pytest --junit-xml=report.xml
-
-      # Publish test results
-      - name: Publish Test Report
+      - name: Publish test report
         uses: mikepenz/action-junit-report@v4
         if: success() || failure() # always run even if the previous step fails
         with:
