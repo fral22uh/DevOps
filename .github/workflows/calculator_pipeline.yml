@@ -19,6 +19,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: . 
     permissions:
       checks: write 
 
@@ -49,10 +51,6 @@ jobs:
         run: |
           sleep 5
           
-      - name: Set python path
-        run: |
-          echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
-
       # Run tests
       - name: Run tests
         run: |
