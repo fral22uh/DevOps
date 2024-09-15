@@ -53,7 +53,6 @@ class CalculatePage(PageBase):
             'keyequals': Element('//button[@id="key-equals"]', self),
             'keyclear': Element('//button[@id="key-clear"]', self),
             'screen': Element('//input[@id="calculator-screen"]', self),
-            'summa': Element('//input[@id="calculator-screen"]', self),
             'historybutton': Element('//button[@id="toggle-button"]', self),
             'historypanel': Element('//textarea[@id="history"]', self)
         }
