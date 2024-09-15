@@ -18,7 +18,7 @@ class TestWeb(WebBase):
 
 class TestCalc(WebBase):
 
-    def test_calc_e2e(self):
+    def test_calc_add_e2e(self):
         LoginPage(self.driver).elements.username.set('admin')
         LoginPage(self.driver).elements.password.set('test1234')
 
@@ -30,6 +30,10 @@ class TestCalc(WebBase):
 
         assert_that(CalculatePage(self.driver).elements.screen.value).is_equal_to('3')
 
+    def test_calc_sub_e2e(self):
+        LoginPage(self.driver).elements.username.set('admin')
+        LoginPage(self.driver).elements.password.set('test1234')
+
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key5.click()
         CalculatePage(self.driver).elements.keysub.click()
@@ -37,6 +41,10 @@ class TestCalc(WebBase):
         CalculatePage(self.driver).elements.keyequals.click()
 
         assert_that(CalculatePage(self.driver).elements.screen.value).is_equal_to('2')
+
+    def test_calc_div_e2e(self):
+        LoginPage(self.driver).elements.username.set('admin')
+        LoginPage(self.driver).elements.password.set('test1234')
 
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key6.click()
@@ -46,6 +54,10 @@ class TestCalc(WebBase):
 
         assert_that(CalculatePage(self.driver).elements.screen.value).is_equal_to('3')
 
+    def test_calc_multi_e2e(self):
+        LoginPage(self.driver).elements.username.set('admin')
+        LoginPage(self.driver).elements.password.set('test1234')
+        
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key2.click()
         CalculatePage(self.driver).elements.keymulti.click()
