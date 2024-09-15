@@ -74,6 +74,8 @@ class TestReg(WebBase):
         RegisterPage(self.driver).elements.password1.set('test1234')
         RegisterPage(self.driver).elements.password2.set('test1234')
         RegisterPage(self.driver).elements.register.click()
+
+        sleep(5)
         
         assert_that(RegisterPage(self.driver).elements.username_registered.text).is_equal_to('User already exists!')
 
