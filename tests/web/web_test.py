@@ -28,7 +28,7 @@ class TestCalc(WebBase):
         CalculatePage(self.driver).elements.key2.click()
         CalculatePage(self.driver).elements.keyequals.click()
 
-        assert_that(CalculatePage(self.driver).elements.summa.value).is_equal_to('3')
+        assert_that(CalculatePage(self.driver).elements.screen.value).is_equal_to('3')
 
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key5.click()
@@ -36,7 +36,7 @@ class TestCalc(WebBase):
         CalculatePage(self.driver).elements.key3.click()
         CalculatePage(self.driver).elements.keyequals.click()
 
-        assert_that(CalculatePage(self.driver).elements.summa.value).is_equal_to('2')
+        assert_that(CalculatePage(self.driver).elements.screen.value).is_equal_to('2')
 
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key6.click()
@@ -44,7 +44,7 @@ class TestCalc(WebBase):
         CalculatePage(self.driver).elements.key2.click()
         CalculatePage(self.driver).elements.keyequals.click()
 
-        assert_that(CalculatePage(self.driver).elements.summa.value).is_equal_to('3')
+        assert_that(CalculatePage(self.driver).elements.screen.value).is_equal_to('3')
 
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key2.click()
@@ -52,7 +52,7 @@ class TestCalc(WebBase):
         CalculatePage(self.driver).elements.key2.click()
         CalculatePage(self.driver).elements.keyequals.click()
 
-        assert_that(CalculatePage(self.driver).elements.summa.value).is_equal_to('4')
+        assert_that(CalculatePage(self.driver).elements.screen.value).is_equal_to('4')
 
 class TestReg(WebBase):
     
