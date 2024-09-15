@@ -36,7 +36,7 @@ class TestCalc(WebBase):
 
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key5.click()
-        CalculatePage(self.driver).elements.keysub.click()
+        CalculatePage(self.driver).elements.keysubtract.click()
         CalculatePage(self.driver).elements.key3.click()
         CalculatePage(self.driver).elements.keyequals.click()
 
@@ -48,7 +48,7 @@ class TestCalc(WebBase):
 
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key6.click()
-        CalculatePage(self.driver).elements.keydiv.click()
+        CalculatePage(self.driver).elements.keydivide.click()
         CalculatePage(self.driver).elements.key2.click()
         CalculatePage(self.driver).elements.keyequals.click()
 
@@ -60,7 +60,7 @@ class TestCalc(WebBase):
         
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key2.click()
-        CalculatePage(self.driver).elements.keymulti.click()
+        CalculatePage(self.driver).elements.keymultiply.click()
         CalculatePage(self.driver).elements.key2.click()
         CalculatePage(self.driver).elements.keyequals.click()
 
@@ -91,7 +91,7 @@ class TestHistory(WebBase):
         CalculatePage(self.driver).elements.keyclear.click()
 
         CalculatePage(self.driver).elements.key6.click()
-        CalculatePage(self.driver).elements.keydiv.click()
+        CalculatePage(self.driver).elements.keydivide.click()
         CalculatePage(self.driver).elements.key2.click()
         CalculatePage(self.driver).elements.keyequals.click()
 
