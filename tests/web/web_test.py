@@ -9,12 +9,14 @@ from tests.web.pages.login_page import CalculatePage
 class TestWeb(WebBase):
 
     def test_login(self):
-        LoginPage(self.driver).elements.username.set('admin')
-        LoginPage(self.driver).elements.password.set('test1234')
-        LoginPage(self.driver).elements.login.click()
+        login_page = LoginPage(self.driver)
+        login_page.login('admin', 'test1234')
+        #LoginPage(self.driver).elements.username.set('admin')
+        #LoginPage(self.driver).elements.password.set('test1234')
+        #LoginPage(self.driver).elements.login.click()
 
-        assert_that(LoginPage(self.driver).elements.username_logged_in.text).is_equal_to('admin')
-
+        #assert_that(LoginPage(self.driver).elements.username_logged_in.text).is_equal_to('admin')
+        assert_that(login_page.elements.username_logged_in.text).is_equal_to('admin')
 
 class TestCalc(WebBase):
 

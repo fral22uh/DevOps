@@ -17,6 +17,12 @@ class LoginPage(PageBase):
 
         self.elements = munchify(self.page_elements)
 
+    # Method for logging inn with the provided username and password
+    def login(self, username, password):
+        self.elements.username.set(username)
+        self.elements.password.set(password)
+        self.elements.login.click()
+
 class RegisterPage(PageBase):
     def __init__(self, driver):
         PageBase.__init__(self, driver = driver)
