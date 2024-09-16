@@ -23,7 +23,6 @@ class TestCalc(WebBase):
         LoginPage(self.driver).elements.password.set('test1234')
         LoginPage(self.driver).elements.login.click()
 
-        CalculatePage(self.driver).elements.login.click()
         CalculatePage(self.driver).elements.key1.click()
         CalculatePage(self.driver).elements.keyadd.click()
         CalculatePage(self.driver).elements.key2.click()
