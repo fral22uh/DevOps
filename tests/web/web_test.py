@@ -69,19 +69,6 @@ class TestCalc(WebBase):
 
         assert_that(CalculatePage(self.driver).elements.screen.value).is_equal_to('4')
 
-class TestReg(WebBase):
-    
-    def test_register(self):
-        RegisterPage(self.driver).elements.register.click()
-        RegisterPage(self.driver).elements.username.set('albin')
-        RegisterPage(self.driver).elements.password1.set('test1234')
-        RegisterPage(self.driver).elements.password2.set('test1234')
-        RegisterPage(self.driver).elements.register.click()
-
-        sleep(5)
-        
-        assert_that(RegisterPage(self.driver).elements.username_logged_in.text).is_equal_to('albin')
-
 class TestHistory(WebBase):
 
     def test_calculator_history(self):
@@ -103,4 +90,32 @@ class TestHistory(WebBase):
         CalculatePage(self.driver).elements.historybutton.click()
 
         assert_that(CalculatePage(self.driver).elements.historypanel.value).is_equal_to('1+2=3\n6/2=3\n')
+
+#class TestReg(WebBase):
+    
+    def test_register(self):
+        RegisterPage(self.driver).elements.register.click()
+        RegisterPage(self.driver).elements.username.set('albin')
+        RegisterPage(self.driver).elements.password1.set('test1234')
+        RegisterPage(self.driver).elements.password2.set('test1234')
+        RegisterPage(self.driver).elements.register.click()
+
+        sleep(5)
+        
+        assert_that(RegisterPage(self.driver).elements.username_logged_in.text).is_equal_to('albin')
+
+class TestReg(WebBase):
+    
+    def test_register(self):
+        RegisterPage(self.driver).elements.register.click()
+        RegisterPage(self.driver).elements.username.set('albin')
+        RegisterPage(self.driver).elements.password1.set('test1234')
+        RegisterPage(self.driver).elements.password2.set('test1234')
+        RegisterPage(self.driver).elements.register.click()
+        ErrorMessage = RegisterPage(self.driver).elements.errormsg
+
+        sleep(5)
+        
+        assert_that(ErrorMessage).is_equal_to('User already exists!')
+
 
