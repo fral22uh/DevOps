@@ -11,6 +11,7 @@ class LoginPage(PageBase):
             'username': Element('//input[@id="username"]', self),
             'password': Element('//input[@id="password"]', self),
             'login': Element('//button[@id="login"]', self),
+            'logout': Element('//button[@id="logout-button"]', self),
             'username_logged_in': Element('//label[@id="user-name"]', self),
         }
 
