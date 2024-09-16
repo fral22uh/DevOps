@@ -11,7 +11,7 @@ class WebBase:
         """ Setup to run once
             Initiatiung some common parameters
         """
-        cls.app_url = 'http://localhost:8080'
+        cls.app_url = 'http://host.docker.internal:8080'
 
     def setup_method(self):
         """ Setup to run before every test
