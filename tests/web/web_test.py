@@ -11,7 +11,7 @@ class TestWeb(WebBase):
     def test_login(self):
         LoginPage(self.driver).elements.username.set('admin')
         LoginPage(self.driver).elements.password.set('test1234')
-        LoginPage(self.driver).elements.login.set()
+        LoginPage(self.driver).elements.login.click()
 
         assert_that(LoginPage(self.driver).elements.username_logged_in.text).is_equal_to('admin')
 
@@ -21,6 +21,7 @@ class TestCalc(WebBase):
     def test_calc_add_e2e(self):
         LoginPage(self.driver).elements.username.set('admin')
         LoginPage(self.driver).elements.password.set('test1234')
+        LoginPage(self.driver).elements.login.click()
 
         CalculatePage(self.driver).elements.login.click()
         CalculatePage(self.driver).elements.key1.click()
@@ -33,6 +34,7 @@ class TestCalc(WebBase):
     def test_calc_sub_e2e(self):
         LoginPage(self.driver).elements.username.set('admin')
         LoginPage(self.driver).elements.password.set('test1234')
+        LoginPage(self.driver).elements.login.click()
 
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key5.click()
@@ -45,6 +47,7 @@ class TestCalc(WebBase):
     def test_calc_div_e2e(self):
         LoginPage(self.driver).elements.username.set('admin')
         LoginPage(self.driver).elements.password.set('test1234')
+        LoginPage(self.driver).elements.login.click()
 
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key6.click()
@@ -57,6 +60,7 @@ class TestCalc(WebBase):
     def test_calc_multi_e2e(self):
         LoginPage(self.driver).elements.username.set('admin')
         LoginPage(self.driver).elements.password.set('test1234')
+        LoginPage(self.driver).elements.login.click()
         
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key2.click()
@@ -84,7 +88,7 @@ class TestHistory(WebBase):
     def test_calculator_history(self):
         LoginPage(self.driver).elements.username.set('admin')
         LoginPage(self.driver).elements.password.set('test1234')
-        CalculatePage(self.driver).elements.login.click()
+        LoginPage(self.driver).elements.login.click()
 
         CalculatePage(self.driver).elements.key1.click()
         CalculatePage(self.driver).elements.keyadd.click()
