@@ -42,34 +42,14 @@ jobs:
         run: |
           pip install -r ./BE/requirements.txt
 
-      # Selenium Docker node
-      - name: Start Selenium Docker
+      # Start Docker
+      - name: Starting Docker
         run: |
           docker run --name selenium -d --add-host host.docker.internal:host-gateway -p 4444:4444 -p 5900:5900 --shm-size="2g" selenium/standalone-chrome:4.2.1-20220531
-
-      # Wait for containers    
-      - name: Wait for services to start
-        run: |
-          sleep 30
-
-      # Docker compose
-      - name: Docker compose project webcalculator
-        run: |
           docker compose -p webcalculator up -d
-
-      # Wait for containers    
       - name: Wait for services to start
         run: |
           sleep 30
-
-      # Start Calculator REST API (localhost service)
-      - name: Start Calculator REST API
-        run: |
-          python ./BE/calculator.py --rest &
-          
-      - name: Wait for services to start
-        run: |
-          sleep 5
 
       # Run tests
       - name: Run tests
