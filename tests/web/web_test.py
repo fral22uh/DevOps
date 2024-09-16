@@ -80,7 +80,7 @@ class TestReg(WebBase):
 
         sleep(5)
         
-        assert_that(RegisterPage(self.driver).elements.username_registered.text).is_equal_to('User already exists!')
+        assert_that(RegisterPage(self.driver).elements.username_logged_in.text).is_equal_to('albin')
 
 class TestHistory(WebBase):
 
