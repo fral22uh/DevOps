@@ -11,11 +11,7 @@ class TestWeb(WebBase):
     def test_login(self):
         # Login
         LoginPage(self.driver).login('admin', 'test1234')
-        #LoginPage(self.driver).elements.username.set('admin')
-        #LoginPage(self.driver).elements.password.set('test1234')
-        #LoginPage(self.driver).elements.login.click()
 
-        #assert_that(LoginPage(self.driver).elements.username_logged_in.text).is_equal_to('admin')
         assert_that(LoginPage(self.driver).elements.username_logged_in.text).is_equal_to('admin')
 
 class TestCalc(WebBase):
@@ -23,10 +19,8 @@ class TestCalc(WebBase):
     def test_calc_add_e2e(self):
         # Login
         LoginPage(self.driver).login('admin', 'test1234')
-        #LoginPage(self.driver).elements.username.set('admin')
-        #LoginPage(self.driver).elements.password.set('test1234')
-        #LoginPage(self.driver).elements.login.click()
 
+        # 1 + 2
         CalculatePage(self.driver).elements.key1.click()
         CalculatePage(self.driver).elements.keyadd.click()
         CalculatePage(self.driver).elements.key2.click()
@@ -37,10 +31,8 @@ class TestCalc(WebBase):
     def test_calc_sub_e2e(self):
         # Login
         LoginPage(self.driver).login('admin', 'test1234')
-        #LoginPage(self.driver).elements.username.set('admin')
-        #LoginPage(self.driver).elements.password.set('test1234')
-        #LoginPage(self.driver).elements.login.click()
 
+        # 5 - 3
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key5.click()
         CalculatePage(self.driver).elements.keysubtract.click()
@@ -52,10 +44,8 @@ class TestCalc(WebBase):
     def test_calc_div_e2e(self):
         # Login
         LoginPage(self.driver).login('admin', 'test1234')
-        #LoginPage(self.driver).elements.username.set('admin')
-        #LoginPage(self.driver).elements.password.set('test1234')
-        #LoginPage(self.driver).elements.login.click()
 
+        # 6 / 2
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key6.click()
         CalculatePage(self.driver).elements.keydivide.click()
@@ -67,10 +57,8 @@ class TestCalc(WebBase):
     def test_calc_multi_e2e(self):
         # Login
         LoginPage(self.driver).login('admin', 'test1234')
-        #LoginPage(self.driver).elements.username.set('admin')
-        #LoginPage(self.driver).elements.password.set('test1234')
-        #LoginPage(self.driver).elements.login.click()
-        
+
+        # 2 x 2
         CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key2.click()
         CalculatePage(self.driver).elements.keymultiply.click()
@@ -84,16 +72,16 @@ class TestHistory(WebBase):
     def test_calculator_history(self):
         # Login
         LoginPage(self.driver).login('admin', 'test1234')
-        #LoginPage(self.driver).elements.username.set('admin')
-        #LoginPage(self.driver).elements.password.set('test1234')
-        #LoginPage(self.driver).elements.login.click()
 
+        # 1 + 2
+        CalculatePage(self.driver).elements.keyclear.click()
         CalculatePage(self.driver).elements.key1.click()
         CalculatePage(self.driver).elements.keyadd.click()
         CalculatePage(self.driver).elements.key2.click()
         CalculatePage(self.driver).elements.keyequals.click()
         CalculatePage(self.driver).elements.keyclear.click()
 
+        # 6 / 2
         CalculatePage(self.driver).elements.key6.click()
         CalculatePage(self.driver).elements.keydivide.click()
         CalculatePage(self.driver).elements.key2.click()
@@ -108,9 +96,6 @@ class TestReg(WebBase):
     def test_register(self):
         RegisterPage(self.driver).elements.register.click()
         RegisterPage(self.driver).register_inputs('albin', 'test1234', 'test1234')
-        #RegisterPage(self.driver).elements.username.set('albin')
-        #RegisterPage(self.driver).elements.password1.set('test1234')
-        #RegisterPage(self.driver).elements.password2.set('test1234')
         RegisterPage(self.driver).elements.register.click()
 
         sleep(5)
