@@ -27,7 +27,8 @@ class WebBase:
         """ Teardown to run after every test
             Stop the driver
         """
-
+        # Ensure that no user is logged in when a test starts
+        LoginPage(self.driver).element.logout.click()
         sleep(1)
         self.driver.quit()
 
