@@ -1,4 +1,5 @@
 from time import sleep
+from tests.web.pages.login_page import LoginPage
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
