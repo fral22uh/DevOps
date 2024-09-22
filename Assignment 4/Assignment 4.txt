@@ -1,0 +1,32 @@
+The customer wants to know the following:
+• Assuming 50 simultaneous users:
+	◦ What are 95th percentile of the response time for the different operations (add, subtract...)?
+		add = 11 ms
+		subtract = 13 ms
+		divide = 10 ms
+		multiply = 10 ms
+
+	◦ What is the throughput? That is, how many requests/second is performed with this user
+	load?
+		At 16.43 req/second
+
+• How many simultaneous users can the application handle and still reliably provide responses?
+	More than 4000 users seems to be the point where it stops being able to reliably provide responses and potentially crashes. For some responses, it takes more than a second to respond and it occasionally generates HTTP 500 Internal Errors.
+
+
+• What is the maximum throughput the Calculator application can achieve and still reliably
+provide responses?
+	Approximately when it reaches more than 1000 req/second. After that it starts occasionally generating HTTP 500 Internal Server Errors.
+
+1. Sometimes the response time when performing the add operation seemed to be slower than
+usual. It didn’t seem to be related to the number of simultaneous users, but no other clues were
+given. Can you figure out under what circumstances the problem may occur?
+	If you attempt to add negative numbers you get a response time of about 2000ms. (This includes 1 negative + 1 positive or 1 negative + 1 negative.)
+
+
+2. The application seemed to crash from time to time. When it happened the application had to be
+restarted and then everything went back to normal. Can you repoduce the problem and inform
+the developers what seems to cause the problem? What part of the application is triggering the
+problem?
+	There seems to be a memory usage problem when using the divide operator. The container has a total of 1.5 GB RAM and the application doesn't seem to release its memory and eventually it gets full and crashes if you use the divide operand.
+	This is because a bytearray is created with the divide operand on the container.
