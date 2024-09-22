@@ -21,7 +21,7 @@ class CalculatorUser(HttpUser):
         with self.client.post("/calculate", catch_response=True, name='add', json=add) as response:
             response_data = json.loads(response.text)
             if not response_data['result'] == data_to_use[2]:
-                response.failure(f"Expected result to be 2 but was {response_data['result']}")
+                response.failure(f"Result was {response_data['result']}")
 
     @task
     def subtract(self):
@@ -35,7 +35,7 @@ class CalculatorUser(HttpUser):
         with self.client.post("/calculate", catch_response=True, name='subtract', json=body) as response:
             response_data = json.loads(response.text)
             if not response_data['result'] == data_to_use[2]:
-                response.failure(f"Expected result to be 0 but was {response_data['result']}")
+                response.failure(f"Result was {response_data['result']}")
 
     @task
     def multiply(self):
@@ -49,7 +49,7 @@ class CalculatorUser(HttpUser):
         with self.client.post("/calculate", catch_response=True, name='multiply', json=body) as response:
             response_data = json.loads(response.text)
             if not response_data['result'] == data_to_use[2]:
-                response.failure(f"Expected result to be 6 but was {response_data['result']}")            
+                response.failure(f"Result was {response_data['result']}")            
 
     @task(10)
     def divide(self):
@@ -63,7 +63,7 @@ class CalculatorUser(HttpUser):
         with self.client.post("/calculate", catch_response=True, name='divide', json=body) as response:
             response_data = json.loads(response.text)
             if not response_data['result'] == data_to_use[2]:
-                response.failure(f"Expected result to be 3 but was {response_data['result']}")
+                response.failure(f"Result was {response_data['result']}")
                 
 if __name__ == "__main__":
     from locust import run_single_user
